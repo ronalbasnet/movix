@@ -11,7 +11,6 @@ import Genres from "../../../components/genres/Genres";
 import CircleRating from "../../../components/circleRating/CircleRating";
 import VideoPopup from "../../../components/videoPopup/VideoPopup";
 
-import Img from "../../../components/lazyLoadImage/Img";
 import PosterFallback from "../../../assets/no-poster.png";
 import { PlayIcon } from "../PlayIcon";
 
@@ -44,19 +43,19 @@ const DetailsBanner = ({ video, crew }) => {
           {!!data && (
             <React.Fragment>
               <div className="backdrop-img">
-                <Img src={url.backdrop + data.backdrop_path} />
+                <img src={url.backdrop + data.backdrop_path} />
               </div>
               <div className="opacity-layer"></div>
               <ContentWrapper>
                 <div className="content">
                   <div className="left">
                     {data.poster_path ? (
-                      <Img
+                      <img
                         className="posterImg"
                         src={url.backdrop + data.backdrop_path}
                       />
                     ) : (
-                      <Img className="posterImg" src={PosterFallback} />
+                      <img className="posterImg" src={PosterFallback} />
                     )}
                   </div>
                   <div className="right">
